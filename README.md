@@ -41,6 +41,25 @@ Project was developed in rocketseat course (next-level-week-return).
 
 Remember, you need a account to access [Figma](http://figma.com/).
 
+## S.O.L.I.D
+- Single Responsability Principle
+- Open/Close Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+
+### S
+- Cada classe tem uma responsabilidade única.
+### O
+- As classes da aplicação dever ser abertas para extensão mas fechadas para modificações;
+- Mais utilizado em programação orientada objetos.
+### L
+- Nós podemos substituir uma classe pai por uma herança dela e tudo continuar funcionando
+### I
+- ...
+### D
+- Inverter as dependências da nossa classe, o código externo mostra para a classe o que ela precisa
+
 ## 👨🏻‍💻 Devs
 - Raphael Capeto
 
