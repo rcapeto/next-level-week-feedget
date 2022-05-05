@@ -12,6 +12,8 @@ This project has developed with:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [React](https://reactjs.org/)
 - [Tailwind](https://v2.tailwindcss.com/docs)
+- [Jest](https://jestjs.io/docs/getting-started)
+- [Prisma](https://www.prisma.io/docs/)
 
 ## 🚀 How to execute
 
