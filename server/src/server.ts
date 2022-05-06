@@ -11,9 +11,11 @@ app.use(express.json({ limit: '1mb' }));
 
 app.use('/feedbacks', route);
 
-app.listen(config.port, () => {
+const port = process.env.PORT || config.port;
+
+app.listen(port, () => {
    console.log(`
       Server is running
-      http://localhost:${config.port}
+      http://localhost:${port}
    `);
 });
