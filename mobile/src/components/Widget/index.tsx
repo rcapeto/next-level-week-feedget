@@ -7,6 +7,7 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 import { theme } from '../../theme';
 import { WidgetOptions } from '../Options';
 import { WidgetForm } from '../Form';
+import { WidgetSuccess } from '../Success';
 import { FeedbackType } from '../../utils/feedbackTypes';
 
 import styles from './styles';
@@ -43,11 +44,12 @@ const Widget: FunctionComponent = () => {
             handleIndicatorStyle={styles.indicator}
          >
             {
-               feedbackType ? (
+               formSuccess ? (
+                  <WidgetSuccess onResetForm={handleRequestResetWidget} />
+               ) : feedbackType ? (
                   <WidgetForm 
                      feedbackType={feedbackType}
                      onResetForm={handleRequestResetWidget}
-                     formSuccess={formSuccess}
                      onChangeFormSuccess={setFormSuccess}
                   />
                ) : (

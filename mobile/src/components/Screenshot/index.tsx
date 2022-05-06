@@ -42,7 +42,6 @@ export const ScreenshotButton: FunctionComponent<ScreenshotButtonProps> = ({
                      weight="fill"
                      style={styles.removeIcon}
                   />
-
                </View>
                
             ) : (

@@ -11,7 +11,6 @@ import { ArrowLeft } from 'phosphor-react-native';
 import * as FileSystem from 'expo-file-system'; //para transformar endereço de imagem em base64
 
 import { ScreenshotButton } from '../Screenshot';
-import { WidgetSuccess } from '../Success';
 
 import { theme } from '../../theme';
 import { FeedbackType, feedbackTypes } from '../../utils/feedbackTypes';
@@ -21,12 +20,11 @@ import styles from './styles';
 export interface WidgetFormProps {
    feedbackType: FeedbackType;
    onResetForm: () => void;
-   formSuccess: boolean;
    onChangeFormSuccess: (formSuccess: boolean) => void;
 };
 
 export const WidgetForm: FunctionComponent<WidgetFormProps> = ({ 
-   feedbackType, onResetForm, formSuccess, onChangeFormSuccess
+   feedbackType, onResetForm, onChangeFormSuccess
 }) => {
    const [screenshot, setScreenshot] = useState<string | null>(null);
    const [comment, setComment] = useState('');
@@ -41,7 +39,9 @@ export const WidgetForm: FunctionComponent<WidgetFormProps> = ({
          return;
       }
 
-      const screenshotBase64 = screenshot && await FileSystem.readAsStringAsync(screenshot, { encoding: 'base64' });
+      const screenshotBase64 = screenshot && await FileSystem.readAsStringAsync(screenshot, { 
+         encoding: 'base64' 
+      });
       const formatedScreenshot = `data:image/png;base64, ${screenshotBase64}`;
 
       const data = { 
@@ -61,8 +61,6 @@ export const WidgetForm: FunctionComponent<WidgetFormProps> = ({
          setIsLoading(false);
       }
    };
-
-   if(formSuccess) return <WidgetSuccess onResetForm={onResetForm}/>
 
    return(
       <View style={styles.container}> 
